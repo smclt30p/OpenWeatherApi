@@ -18,7 +18,7 @@ public class Wind {
 
 	public StringBuilder getWindSpeed() {
 		StringBuilder winds = new StringBuilder();
-		winds.append("Wind Speed ");
+		winds.append("Wind Speed: ");
 		winds.append(winSpeedNoDecs);
 		winds.append("m/s");
 		return winds;

@@ -22,7 +22,8 @@ public class Weather {
 
 	public StringBuilder getHumidity() {
 		StringBuilder humidity = new StringBuilder();
-		humidity.append("Humidity: " + hum);
+		humidity.append("Humidity: ");
+		humidity.append(hum);
 		humidity.append("%");
 		return humidity;
 	}
