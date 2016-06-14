@@ -10,8 +10,8 @@ public class Weather {
 
 	int hum = (int) main.get("humidity");
 
-	public StringBuffer getTemp() {
-		StringBuffer temp = new StringBuffer();
+	public StringBuilder getTemp() {
+		StringBuilder temp = new StringBuilder();
 		temp.append("Temperature in ");
 		temp.append(Main.getJSONObj().get("name"));
 		temp.append(" is: ");
@@ -20,8 +20,8 @@ public class Weather {
 		return temp;
 	}
 
-	public StringBuffer getHumidity() {
-		StringBuffer humidity = new StringBuffer();
+	public StringBuilder getHumidity() {
+		StringBuilder humidity = new StringBuilder();
 		humidity.append("Humidity: " + hum);
 		humidity.append("%");
 		return humidity;

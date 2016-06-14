@@ -16,16 +16,16 @@ public class Wind {
 	boolean south = (degreeNoDecs >= 135 && degreeNoDecs <= 224);
 	boolean west = (degreeNoDecs >= 225 && degreeNoDecs <= 314);
 
-	public StringBuffer getWindSpeed() {
-		StringBuffer winds = new StringBuffer();
+	public StringBuilder getWindSpeed() {
+		StringBuilder winds = new StringBuilder();
 		winds.append("Wind Speed ");
 		winds.append(winSpeedNoDecs);
 		winds.append(" m/s");
 		return winds;
 	}
 
-	public StringBuffer getDegree() {
-		StringBuffer deg = new StringBuffer();
+	public StringBuilder getDegree() {
+		StringBuilder deg = new StringBuilder();
 		deg.append("Wind Direction: ");
 
 		if (north)
