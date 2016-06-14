@@ -2,28 +2,27 @@ package main;
 
 import org.json.JSONObject;
 
-public class Weather {
-	JSONObject main = Main.getJSONObj().getJSONObject("main");
+class Weather {
 
-	double cels = (double) main.get("temp") - 273;
-	int celsNoDecs = (int) cels;
+	private JSONObject main = Main.getJSONObj().getJSONObject("main");
+	private int cels = (int) main.getLong("temp") - 273;
+	private int hum = main.getInt("humidity");
 
-	int hum = (int) main.get("humidity");
-
-	public StringBuilder getTemp() {
+	StringBuilder getTemp() {
 		StringBuilder temp = new StringBuilder();
 		temp.append("Temperature in ");
 		temp.append(Main.getJSONObj().get("name"));
 		temp.append(" is: ");
-		temp.append(celsNoDecs);
+		temp.append(cels);
 		temp.append("c");
 		return temp;
 	}
 
-	public StringBuilder getHumidity() {
+	StringBuilder getHumidity() {
 		StringBuilder humidity = new StringBuilder();
-		humidity.append("Humidity: " + hum);
-		humidity.append("%");
+		humidity.append("Humidity: ")
+				.append(hum)
+				.append("%");
 		return humidity;
 	}
 
