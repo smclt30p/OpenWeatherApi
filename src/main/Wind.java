@@ -20,7 +20,7 @@ public class Wind {
 		StringBuilder winds = new StringBuilder();
 		winds.append("Wind Speed ");
 		winds.append(winSpeedNoDecs);
-		winds.append(" m/s");
+		winds.append("m/s");
 		return winds;
 	}
 
