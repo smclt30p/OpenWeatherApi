@@ -26,6 +26,8 @@ class Connect {
 			System.err.println("I/O Error: " + e.getMessage());
 			System.exit(1);
 		}
-		return "";
+
+		throw new RuntimeException("Method fallthrough!");
+
 	}
 }
