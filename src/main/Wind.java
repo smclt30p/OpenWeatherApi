@@ -5,10 +5,10 @@ import org.json.JSONObject;
 public class Wind {
 	JSONObject wind = Main.getJSONObj().getJSONObject("wind");
 
-	double winSpeed = (double) wind.get("speed");
+	long winSpeed = wind.getLong("speed");
 	int winSpeedNoDecs = (int) winSpeed;
 
-	double degree = (double) wind.get("deg");
+	long degree = wind.getLong("deg");
 	int degreeNoDecs = (int) degree;
 
 	boolean north = (degreeNoDecs >= 315 && degreeNoDecs <= 360) || (degreeNoDecs >= 0 && degreeNoDecs <= 44);
