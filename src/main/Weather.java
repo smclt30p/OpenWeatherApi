@@ -4,26 +4,23 @@ import org.json.JSONObject;
 
 class Weather {
 
-	private JSONObject main = Main.getJSONObj().getJSONObject("main");
-	private int cels = main.getInt("temp") - 273;
-	private int hum = main.getInt("humidity");
+    private JSONObject main = Main.getJSONObj().getJSONObject("main");
+    private double cels = main.getDouble("temp");
+    private int hum = main.getInt("humidity");
 
-	StringBuilder getTemp() {
-		StringBuilder temp = new StringBuilder();
-		temp.append("Temperature in ");
-		temp.append(Main.getJSONObj().get("name"));
-		temp.append(" is: ");
-		temp.append(cels);
-		temp.append("c");
-		return temp;
-	}
+    StringBuilder getTemp() {
+        return new StringBuilder("Temperature in ")
+                .append(Main.getJSONObj().get("name"))
+                .append(" is: ")
+                .append(cels)
+                .append("c");
+    }
 
-	StringBuilder getHumidity() {
-		StringBuilder humidity = new StringBuilder();
-		humidity.append("Humidity: ")
-				.append(hum)
-				.append("%");
-		return humidity;
-	}
+    StringBuilder getHumidity() {
+        return new StringBuilder("Humidity: ")
+                .append(hum)
+                .append("%");
+
+    }
 
 }
