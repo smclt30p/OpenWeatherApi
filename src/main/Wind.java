@@ -2,41 +2,40 @@ package main;
 
 import org.json.JSONObject;
 
-public class Wind {
-	JSONObject wind = Main.getJSONObj().getJSONObject("wind");
+class Wind {
 
-	double winSpeed = (double) wind.get("speed");
-	int winSpeedNoDecs = (int) winSpeed;
+    private JSONObject wind = Main.getJSONObj().getJSONObject("wind");
 
-	double degree = (double) wind.get("deg");
-	int degreeNoDecs = (int) degree;
+    private int winSpeed = wind.getInt("speed");
+    private int degree = wind.getInt("deg");
 
-	boolean north = (degreeNoDecs >= 315 && degreeNoDecs <= 360) || (degreeNoDecs >= 0 && degreeNoDecs <= 44);
-	boolean east = (degreeNoDecs >= 45 && degreeNoDecs <= 134);
-	boolean south = (degreeNoDecs >= 135 && degreeNoDecs <= 224);
-	boolean west = (degreeNoDecs >= 225 && degreeNoDecs <= 314);
+    private boolean north = (degree >= 315 && degree <= 360) || (degree >= 0 && degree <= 44);
+    private boolean east = (degree >= 45 && degree <= 134);
+    private boolean south = (degree >= 135 && degree <= 224);
+    private boolean west = (degree >= 225 && degree <= 314);
 
-	public StringBuilder getWindSpeed() {
-		StringBuilder winds = new StringBuilder();
-		winds.append("Wind Speed ");
-		winds.append(winSpeedNoDecs);
-		winds.append("m/s");
-		return winds;
-	}
+    StringBuilder getWindSpeed() {
 
-	public StringBuilder getDegree() {
-		StringBuilder deg = new StringBuilder();
-		deg.append("Wind Direction: ");
+        return new StringBuilder("Wind Speed ")
+                .append(winSpeed)
+                .append("m/s");
 
-		if (north)
-			deg.append("NORTH");
-		if (east)
-			deg.append("EAST");
-		if (south)
-			deg.append("SOUTH");
-		if (west)
-			deg.append("WEST");
-		return deg;
-	}
+    }
+
+    StringBuilder getDegree() {
+        StringBuilder deg = new StringBuilder();
+        deg.append("Wind Direction: ");
+
+        if (north)
+            deg.append("NORTH");
+        if (east)
+            deg.append("EAST");
+        if (south)
+            deg.append("SOUTH");
+        if (west)
+            deg.append("WEST");
+
+        return deg;
+    }
 
 }
